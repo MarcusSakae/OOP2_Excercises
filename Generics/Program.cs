@@ -46,17 +46,9 @@ internal class Program
         stack.Push("Hej");
         stack.Push("på");
         stack.Push("dej!");
- 
-        Console.WriteLine("peek");
         Debug.Assert(stack.Peek() == "dej!");
-
-        Console.WriteLine("pop");
         Debug.Assert(stack.Pop() == "dej!");
-
-        Console.WriteLine("peek");
         Debug.Assert(stack.Peek() == "på");
- 
-        Console.WriteLine("count");
         Debug.Assert(stack.Count == 2);
     }
 }
