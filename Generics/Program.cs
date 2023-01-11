@@ -1,19 +1,19 @@
 ﻿using System.Diagnostics;
 
-class Stack
+class Stack<T>
 {
-    private string[] items;
+    private T[] items;
     public int Count { get; private set; }
 
     public Stack()
     {
-        items = new string[0];
+        items = new T[0];
         Count = 0;
     }
 
-    public void Push(string item)
+    public void Push(T item)
     {
-        var newItems = new string[Count + 1];
+        var newItems = new T[Count + 1];
         newItems[0] = item;
         for (int i = 0; i < Count; i++)
         {
@@ -24,7 +24,7 @@ class Stack
 
     }
 
-    public string Pop()
+    public T Pop()
     {
         var item = items[0];
         items = items[1..];
@@ -32,7 +32,7 @@ class Stack
         return item;
     }
 
-    public string Peek()
+    public T Peek()
     {
         return items[0];
     }
@@ -42,7 +42,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var stack = new Stack();
+        var stack = new Stack<string>();
         stack.Push("Hej");
         stack.Push("på");
         stack.Push("dej!");
